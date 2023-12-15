@@ -11,8 +11,15 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone resume repository
+      - name: Checkout Resume/master
         uses: actions/checkout@v4
+        with:
+          path: resume
+      - name: Checkout Resume/gh-pages
+        uses: actions/checkout@v4
+        with:
+          path: gh-pages
+          ref: gh-pages
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
@@ -20,17 +27,19 @@ jobs:
           latexmk_use_xelatex: true
           extra_fonts: |
             ./fonts/*.otf
+          working_directory: resume
       - name: Upload PDF file to release
         uses: actions/upload-artifact@v4
         with:
           name: resume-zh.pdf
-          path: resume-zh.pdf
-      - name: Upload PDF file to docs
+          path: resume/resume-zh.pdf
+      - name: Push PDF file to gh-pages
         run: |
-          cp -RT resume-zh.pdf docs/resume-zh.pdf
+          cp resume/resume-zh.pdf gh-pages/resume-zh.pdf
+          cd gh-pages
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -f docs/resume-zh.pdf
+          git add -f resume-zh.pdf
           git commit -m "resume-zh.pdf update"
           git push
           
