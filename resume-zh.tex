@@ -1,0 +1,155 @@
+%%
+%% Copyright (c) 2018-2019 Weitian LI <wt@liwt.net>
+%% CC BY 4.0 License
+%%
+%% Created: 2018-04-11
+%%
+
+% Chinese version
+\documentclass[zh]{resume}
+
+% Adjust icon size (default: same size as the text)
+\iconsize{\Large}
+
+% File information shown at the footer of the last page
+\fileinfo{%
+  \faCopyright{} 2018--2020, Weitian LI \hspace{0.5em}
+  \creativecommons{by}{4.0} \hspace{0.5em}
+  \githublink{liweitianux}{resume} \hspace{0.5em}
+  \faEdit{} \today
+}
+
+\name{昊轩}{韩}
+
+\keywords{Rust, Linux, Programming, Python, C, Shell, Bare matel}
+
+% \tagline{\icon{\faBinoculars}} <position-to-look-for>}
+% \tagline{<current-position>}
+
+% \photo{<height>}{<filename>}
+
+\profile{
+  \mobile{176-6409-4001}
+  \email{hhx.xxm@gmail.com}
+  \github{Oyami-Srk} \\
+  \university{齐鲁理工学院}
+  \degree{计算机科学与技术 \textbullet 学士（在读）}
+  \birthday{2001-01-25}
+  \address{青岛}
+  % Custom information:
+  % \icontext{<icon>}{<text>}
+  % \iconlink{<icon>}{<link>}{<text>}
+}
+
+\begin{document}
+\makeheader
+
+%======================================================================
+% Summary & Objectives
+%======================================================================
+{\onehalfspacing\hspace{2em}%
+计算机科学与技术专业本科生。对计算机底层、操作系统等有深入的研究，热衷于操作系统技术，曾编写过 x86 、RISC-V 平台的操作系统内核。有多年 Linux 使用经验，熟练掌握 Linux Shell、Python、C 语言、Rust 语言，并对嵌入式软件开发有一定经验。怀抱开源精神，热爱开源社区，在\link{https://github.com/Oyami-Srk}{GitHub} 上开源了多个个人项目，并对一些开源项目做出过贡献。
+\par}
+
+
+%======================================================================
+%\sectionTitle{技能和语言}{\faWrench}
+%======================================================================
+%\begin{competences}
+%  \comptence{编程语言}{%
+%    C, Shell, Python, Rust, Typescript
+%  }
+%  %\comptence{工具}{%
+%  %  ZSH, SSH, Git, Make, CMake, Vim
+%  %}
+%  \comptence{\icon{\faLanguage} 语言}{
+%    \textbf{英语} --- 读写（优良），听说（日常交流）
+%  }
+%\end{competences}
+
+%======================================================================
+\sectionTitle{教育背景}{\faGraduationCap}
+%======================================================================
+\begin{educations}
+  \education%
+    {2020.09}%
+    [2024.06]%
+    {齐鲁理工学院}%
+    {计算机与信息工程学院}%
+    {计算机科学与技术}%
+    {学士（在读）}
+\end{educations}
+
+%======================================================================
+\sectionTitle{计算机技能}{\faCogs}
+%======================================================================
+\begin{itemize}
+	\item 熟练掌握以下编程语言和技术：C, Shell, Python, Rust, Typescript。
+	\item 能够熟练使用英文，具有优秀的读写能力，能够使用英文进行日常交流、阅读文档。
+	\item 优秀的学习能力，热爱新技术，自学能力强。
+	\item 有充分的计算机底层、裸机开发的经验，能够独立完成操作系统内核级别的设计与开发。%，对Linux系统内核原理有深入的了解。
+	\item 具备一定的嵌入式软件开发能力，可以开发出稳定的嵌入式软件。
+	\item 熟练使用Linux操作系统，具备开发基础工具的能力，可以根据需求编写特定功能的脚本、程序等。
+	\item 熟练使用Git、Shell、CMake等工具，对主流的集成开发环境有丰富的使用经验。
+	\item 能够快速上手新技术、新框架、新语言，可以对特定需求进行快速开发。
+\end{itemize}
+
+
+%======================================================================
+\sectionTitle{个人项目}{\faCode}
+%======================================================================
+\begin{itemize}
+  \item \link{https://github.com/Oyami-Srk/OmochaOS/tree/backup-main-cmake-2022}{\texttt{OmochaOS}}:
+	(C, CMake)
+	个人学习用x86系统内核，采用微内核架构，实现了HPET、PCI、APIC、AHCI等驱动程序，并具备可拓展的系统模块加载框架。
+	\item \link{https://github.com/Oyami-Srk/MFTT-RISCV} {\texttt{MFTT-RISCV}}:
+	(C, CMake)
+	全国大学生操作系统设计大赛比赛用RISCV系统内核，采用宏内核架构，实现了对称多处理、基于伙伴算法的页分配器、基于红黑树的Slab小对象分配器、CoW Fork、通用FDT设备树加载及驱动框架、FAT32文件系统（只读）、Execve、dup、pipe等常用POSIX系统调用方法。并兼容部分Linux系统调用。系统实现了QEMU和K210的移植，并配有简单的 virtio-mmio 和 virtio-disk 驱动。
+	\item \link{https://github.com/Oyami-Srk/SelfServiceCarWashing} {\texttt{SelfServiceCarWashing}}:
+	(C)
+	校企合作自助式洗车机项目嵌入式端。基于LVGL和STM32F4实现，并具备网络控制、数据统计传输功能。
+	\item \link{https://github.com/Oyami-Srk/AiR} {\texttt{AiR}}:
+	(C, C++)
+	AiR空气质量监测器系统。基于ESP32，实现了MQTT、HTTP API、HTTP界面等多种信息传递方式。
+	\item \link{https://github.com/Oyami-Srk/RISCV-GDB-Paging} {\texttt{RISCV-GDB-Paging}}:
+	(Python, Scheme)
+	用于调试RISCV架构SV39/SV48分页信息的GDB脚本。
+	\item \link{https://github.com/Oyami-Srk/rust-headless-chrome/tree/resp-handler-dereg} {\texttt{Rust-headless-chrome(代码贡献)}}:
+	(Rust)
+	对广泛应用的Rust的Chrome DevTools协议实现API提交了代码贡献，完善了部分API的应用方法，并针对其代码生成工具\link{https://github.com/Oyami-Srk/auto\_generate\_cdp}{\texttt{auto\_generate\_cdp}}中的错误进行修正。
+	\item \link{https://github.com/Oyami-Srk/shirodl} {\texttt{ShiroDL}}:
+	(Rust)
+	Rust异步并发小文件下载库，具有良好的通用性和拓展性。同时提供批量下载小文件的命令行程序。
+	\item \link{https://github.com/Oyami-Srk/ShiroTweet} {\texttt{ShiroTweet}}:	(Rust) 	使用非官方API对指定推特链接进行数据爬取并存入数据库的小工具。
+	\item \link{https://github.com/Oyami-Srk/OmegaGomoku} {\texttt{OmegaGomoku}}:
+	(Python)
+	基于PyTorch和DQN算法的五子棋人工智能。
+	\item \link{https://github.com/Oyami-Srk/SlideshowForEachMonitor} {\texttt{Slideshow For Each Monitor}}:
+	(C\#)
+	于Windows平台对不同屏幕设置不同的壁纸幻灯片的小工具。
+	\item \link{https://github.com/Oyami-Srk/Rust-shunting\_yard} {\texttt{Rust-shunting\_yard}}:
+	(Rust)
+	使用Rust编写的基于调度场算法的表达式求值工具，具备一定的函数定义能力。
+	\item \link{https://github.com/Oyami-Srk/XueQiuSpider2018} {\texttt{XueQiuSpider2018}}:
+	(Python)
+	雪球网站(2018年)爬虫程序，具备自动登录、状态监控等功能。
+\end{itemize}
+\pagebreak
+%======================================================================
+\sectionTitle{奖项证书}{\faTrophy}
+%======================================================================
+\begin{itemize}
+  \item\link{https://srk00.qvq.moe:5001/public/imgs/2018-GoogleCodeIn\%E9\%AB\%98\%E4\%B8\%AD.jpg}{\texttt{Google Code-in 2017}}
+	\item\link{https://srk00.qvq.moe:5001/public/imgs/2020-\%E5\%A4\%96\%E7\%A0\%94\%E7\%A4\%BE\%E5\%9B\%BD\%E6\%9D\%90\%E6\%9D\%AF\%E5\%85\%A8\%E5\%9B\%BD\%E8\%8B\%B1\%E8\%AF\%AD\%E9\%98\%85\%E8\%AF\%BB\%E5\%A4\%A7\%E8\%B5\%9B\%E5\%B1\%B1\%E4\%B8\%9C\%E7\%9C\%81\%E5\%A4\%8D\%E8\%B5\%9B-\%E4\%B8\%89\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{2020\enquote{外研社·国才杯}全国英语阅读大赛\ 山东赛区\ 三等奖}}
+	\item\link{https://srk00.qvq.moe:5001/public/imgs/2021-\%E4\%B8\%AD\%E5\%9B\%BD\%E5\%A4\%A7\%E5\%AD\%A6\%E7\%94\%9F\%E8\%AE\%A1\%E7\%AE\%97\%E6\%9C\%BA\%E8\%AE\%BE\%E8\%AE\%A1\%E5\%A4\%A7\%E8\%B5\%9B\%E5\%B1\%B1\%E4\%B8\%9C\%E7\%9C\%81\%E7\%BA\%A7\%E8\%B5\%9B-\%E4\%B8\%89\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{2021年第14届中国大学生计算机设计大赛\ 山东省级赛\ 三等奖}}
+	\item\link{https://srk00.qvq.moe:5001/public/imgs/2021-\%E5\%85\%A8\%E5\%9B\%BD\%E5\%A4\%A7\%E5\%AD\%A6\%E7\%94\%9F\%E8\%8B\%B1\%E8\%AF\%AD\%E7\%AB\%9E\%E8\%B5\%9BC\%E7\%B1\%BB-\%E4\%BA\%8C\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{2021年第三届全国高校计算机能力挑战赛\ 程序设计赛-C++华东区域\ 优秀奖}}
+	\item\link{https://srk00.qvq.moe:5001/public/imgs/2021-\%E5\%B1\%B1\%E4\%B8\%9C\%E7\%9C\%81\%E5\%A4\%A7\%E5\%AD\%A6\%E7\%94\%9F\%E7\%94\%B5\%E5\%AD\%90\%E4\%B8\%8E\%E4\%BF\%A1\%E6\%81\%AF\%E6\%8A\%80\%E6\%9C\%AF\%E5\%BA\%94\%E7\%94\%A8\%E5\%A4\%A7\%E8\%B5\%9B-\%E4\%BA\%8C\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{\enquote{赛冠杯}第八届山东省大学生电子与信息技术应用大赛\ 二等奖}}
+	\item\link{https://srk00.qvq.moe:5001/public/imgs/2022-\%E4\%B8\%AD\%E5\%9B\%BD\%E5\%A4\%A7\%E5\%AD\%A6\%E7\%94\%9F\%E8\%AE\%A1\%E7\%AE\%97\%E6\%9C\%BA\%E8\%AE\%BE\%E8\%AE\%A1\%E5\%A4\%A7\%E8\%B5\%9B\%E7\%9C\%81\%E4\%BA\%8C\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{2022年第15届中国大学生计算机设计大赛\ 山东省级赛\ 二等奖}}
+	\item\link{https://srk00.qvq.moe:5001/public/imgs/2022-\%E6\%93\%8D\%E4\%BD\%9C\%E7\%B3\%BB\%E7\%BB\%9F\%E8\%AE\%BE\%E8\%AE\%A1\%E5\%88\%9D\%E8\%B5\%9B\%E4\%BC\%98\%E8\%83\%9C\%E5\%A5\%96.jpg} {\texttt{2022年全国大学生计算机系统能力大赛操作系统设计赛内核实现赛道\ 初赛优胜奖}}
+	\item\link{https://srk00.qvq.moe:5001/public/imgs/2022-\%E8\%93\%9D\%E6\%A1\%A5\%E6\%9D\%AF\%E5\%9B\%BD\%E8\%B5\%9BB\%E7\%BB\%84-\%E4\%B8\%89\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{第十三届蓝桥杯全国软件和信息技术专业人才大赛\ 山东赛区C/C++程序设计\ 大学B组\ 一等奖}}
+	\item\link{https://srk00.qvq.moe:5001/public/imgs/2022-\%E8\%93\%9D\%E6\%A1\%A5\%E6\%9D\%AF\%E5\%9B\%BD\%E8\%B5\%9BB\%E7\%BB\%84-\%E4\%B8\%89\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{第十三届蓝桥杯全国软件和信息技术专业人才大赛\ 全国总决赛C/C++程序设计\ 大学B组\ 三等奖}}
+	\item\link{https://srk00.qvq.moe:5001/public/imgs/\%E8\%BD\%AF\%E4\%BB\%B6\%E8\%91\%97\%E4\%BD\%9C\%E6\%9D\%83\%E7\%99\%BB\%E8\%AE\%B0\%E8\%AF\%81\%E4\%B9\%A6-\%E7\%A9\%BA\%E6\%B0\%94\%E8\%B4\%A8\%E9\%87\%8F\%E6\%A3\%80\%E6\%B5\%8B\%E7\%B3\%BB\%E7\%BB\%9F.jpg} {\texttt{中华人民共和国国家版权局\ 计算机软件著作权登记证书\ AiR空气质量监测器系统}}
+\end{itemize}
+
+
+\end{document}
