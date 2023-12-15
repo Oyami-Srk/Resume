@@ -1,0 +1,179 @@
+%%
+%% Copyright (c) 2018-2019 Weitian LI <wt@liwt.net>
+%% CC BY 4.0 License
+%%
+%% Created: 2018-04-11
+%%
+
+\hbadness=99999 
+
+% English version
+\documentclass{resume}
+
+% Adjust icon size (default: same size as the text)
+\iconsize{\Large}
+
+% File information shown at the footer of the last page
+\fileinfo{%
+  \faCopyright{} 2018--2020, Weitian LI \hspace{0.5em}
+  \creativecommons{by}{4.0} \hspace{0.5em}
+  \githublink{liweitianux}{resume} \hspace{0.5em}
+  \faEdit{} \today
+}
+
+\name{HaoXuan}{Han}
+
+\keywords{Rust, Linux, Programming, Python, C, Shell, Bare matel}
+
+% \tagline{\icon{\faBinoculars}} <position-to-look-for>}
+% \tagline{<current-position>}
+
+% \photo{<height>}{<filename>}
+
+\profile{
+  \mobile{176-6409-4001}
+  \email{hhx.xxm@gmail.com}
+  \github{Oyami-Srk} \\
+  \university{Qilu Institute of Technology}
+  \degree{Computer Science \textbullet Bachelor}
+  \birthday{2001-01-25}
+  \address{Qingdao}
+  % Custom information:
+  % \icontext{<icon>}{<text>}
+  % \iconlink{<icon>}{<link>}{<text>}
+}
+
+\begin{document}
+\makeheader
+
+%======================================================================
+% Summary & Objectives
+%======================================================================
+{\onehalfspacing
+\hspace{2em}
+I have dived into in low-level and kernel developments. Passionate about operating system and have developed kernels for x86 and RISC-V architectures. 
+I'm familiar with the Linux kernel and system, and with experience in embedded development.
+
+\onehalfspacing
+\hspace{2em}
+With extensive experience in low-level and bare-metal development, I am capable of independently designing, developing, and debugging OS Kernel. I have a rich experience in many developing toolkits.
+I am enthusiastic about the open-source community and have open-sourced various personal projects on \link{https://github.com/Oyami-Srk}{GitHub}, and also contributed to some open-source projects.
+\par}
+
+
+\sectionTitle{Skills}{\faWrench}
+\begin{competences}[7em]
+  \comptence{Development}{%
+    C, Shell, Python, Rust, Typescript, Git, CMake, ……
+  }
+  \comptence{\icon{\faLanguage} Language}{
+    \textbf{English} --- Reading/Writing (Excellent), Listening/Speaking (Good), Being used to read/write documents in English.
+  }
+\end{competences}
+
+%======================================================================
+\sectionTitle{Education}{\faGraduationCap}
+%======================================================================
+\begin{educations}
+  \education%
+    {2020.09}%
+    [2024.06]%
+    {Qilu Institute of Technology}%
+    {Computer and Information engineering insitute}%
+    {Computer Science}%
+    {Bachelor (Undergraduate)}
+\end{educations}
+
+
+%======================================================================
+\sectionTitle{Personal Projects}{\faCode}
+%======================================================================
+\begin {projects}
+	\project{2023.7}[Present][https://gitee.com/BookOS/nxos/tree/proj-3-virtio/]{VirtIO Drivers implementation based on NXOS Kernel}{
+		Project of \link{https://summer-ospp.ac.cn/org/prodetail/238070164?lang=zh&list=pro}{OSPP 2023}, implement VirtIO Drivers for NXOS kernel, is currently ongoing.
+		\begin{itemize}
+			\item Implemented VirtIO Over PCI Bus and VirtIO Over MMIO
+			\item Implemented various VirtIO devices, such as Net, Block, Input, Sound, etc.
+			\item Fixed Bugs in NXOS Kernel codebase
+			\item Archived compatibility to error implementations beyond specification through studying the sources of Linux kernel and QEMU
+		\end{itemize}
+	}[C,VirtIO,QEMU,Low-level development,Driver developement]
+
+	\project{2023.4}[2023.7]{Safety Training Online Platform}{
+		Personal freelance project. Archived a online video training platoform with features of online training, face recognition, quiz tests and comments.
+		\begin{itemize}
+			\item Using Django and Django REST Framework as backend implementation
+			\item Using Vue3.0 and Vue-Pure-Admin framework for administration panel
+			\item Archived same functionality via Vue and Wechat mini program for trainee frontend
+		\end{itemize}
+	}[Python,Django,Django REST Framework,Vue,Full stack development]
+
+	\project{2022.5}[2022.7][https://github.com/Oyami-Srk/MFTT-RISCV]{OS Kernel based on RISC-V Architecture}{
+		Project for \link{https://os.educg.net/\#/oldDetail?name=2022\%E5\%85\%A8\%E5\%9B\%BD\%E5\%A4\%A7\%E5\%AD\%A6\%E7\%94\%9F\%E8\%AE\%A1\%E7\%AE\%97\%E6\%9C\%BA\%E7\%B3\%BB\%E7\%BB\%9F\%E8\%83\%BD\%E5\%8A\%9B\%E5\%A4\%A7\%E8\%B5\%9B\%E6\%93\%8D\%E4\%BD\%9C\%E7\%B3\%BB\%E7\%BB\%9F\%E8\%AE\%BE\%E8\%AE\%A1\%E8\%B5\%9B-\%E5\%86\%85\%E6\%A0\%B8\%E5\%AE\%9E\%E7\%8E\%B0\%E8\%B5\%9B}{Kernel Design Competition}, a kernel based on RISC-V 64 architecture, a macrokernel design. Communicate with hardware through SBI and therefore the portability and universality could be archived.
+		\begin{itemize}
+			\item Archived SMP multi-processor via spinlock and sleeplock
+			\item Archived Buddy Page Allocator and RB-Tree based Slab objects allocator
+			\item Implemented CoW Fork to improve performance
+			\item Archived support of Flatten Device Tree along with extensible driver framework
+			\item Archived some generic POSIX syscalls like Execve, dup, pipe and with compatibility to some Linux syscalls
+			\item Support QEMU and K210, and implemented virtio-mmio/virtio-disk for QEMU
+			\item Developed \link{https://github.com/Oyami-Srk/RISCV-GDB-Paging} {\texttt{RISCV-GDB-Paging}} for debugging VS39/SV48 paging information for RISC-V on QEMU. Written in Python and Scheme Lisp
+		\end{itemize}
+	}[C,CMake,Low-level developement,Kenrel developement,RISC-V,GDB,Python]
+
+	\project{2021.10}[2022.3][https://github.com/Oyami-Srk/SelfServiceCarWashing]{Self Service Car Washing Embedded Software}{
+		Embedded part of Self Service Car Washing solutions, this project archived the terminal electrical controlling and user-end GUI.
+		\begin{itemize}
+			\item As project manager, I coordinated developers in other parts and collaborated with partner companies
+			\item Using STM32F4 as MCU and developed through STM32 HAL
+			\item Ported LVGL using DMA2D for a high performance, decoupling the LVGL GUI from embedded functionality for easier debugging and development
+			\item Communicate with LTE IoT modules and ESP32 via AT commands, enabling interaction with server-side systems
+			\item Implemented configurating from PC through USB-FS and FATFS
+			\item Employed FreeRTOS as the embedded operating system, using tasks to handle different sub-procedures
+		\end{itemize}
+	}[C,STM32,LVGL,FreeRTOS,Embedded developement]
+\end {projects}
+
+\sectionTitle{Other Personal Projects}{\faCode}
+\begin{itemize}
+	\item \simpleProject[https://github.com/Oyami-Srk/OmochaOS/tree/backup-main-cmake-2022]{OmochaOS}{
+		Toy kernel for study of x86 development, with a microkernel architecture. Successfully implemented drivers for essential components such as HPET, PCI, APIC, and AHCI. Additionally, a modular framework to ensure extensibility and flexibility within the system has been implemented.
+	}[C,CMake,Kernel development,Low-level developement]
+	\item \simpleProject[https://github.com/Oyami-Srk/AiR]{AiR Air Quality Monitoring System}{
+		The AiR Air Quality Monitoring System based on ESP32. With MQTT, HTTP API and HTTP Frontend support in network and also with display support in onboard LCD.
+	}[C,Embedded developement,FreeRTOS,ESP32]
+	\item \simpleProject[https://github.com/Oyami-Srk/OmegaGomoku]{OmegaGomoku}{
+		Developed a Gomoku AI using PyTorch and DQN algorithm. Optimized DQN reward calculation. Achieved moderate AI performance after 100k training games. Outperformed MiniMax with 95\% max win rate and 50\% average win rate at 2-level search depth.
+		Report: \link{https://blog.qvq.moe/OmegaGomoku/Report/\%E4\%BA\%BA\%E5\%B7\%A5\%E6\%99\%BA\%E8\%83\%BD\%E8\%AF\%BE\%E7\%A8\%8B\%E6\%8A\%A5\%E5\%91\%8A.pdf}{Click Here}
+	}[Python,PyTorch,DQN,Machine Learning,Deep Learning]
+	\item \simpleProject[https://github.com/Oyami-Srk/Rust-shunting\_yard]{Rust-shunting\_yard}{
+		Expression evaluation tool written in Rust using the Shunting Yard algorithm, equipped with function definition capabilities.
+	}[Rust,Algorithm]
+	\item \simpleProject[https://github.com/Oyami-Srk/rust-headless-chrome/tree/resp-handler-dereg]{Rust-headless-chrome(Code contribution)}{
+		Contributed code to the Chrome DevTools Protocol implementation API in Rust, enhancing and refining certain API application methods. Additionally, fixed errors within the code generation tool (\link{https://github.com/Oyami-Srk/auto\_generate\_cdp}{\texttt{auto\_generate\_cdp}}) to solve the functionality issue of the projecct.
+	}[Rust,Library,Chrome DevTools]
+	\item \simpleProject[https://github.com/Oyami-Srk/shirodl]{ShiroDL}{
+		Asynchronous concurrent small-file download library in Rust, designed for versatility and extensibility. Includes a command-line program for batch downloading small files.
+	}[Rust,Library,Tool developement]
+\end{itemize}
+
+%======================================================================
+\sectionTitle{Awards and Certificates}{\faTrophy}
+%======================================================================
+\begin{itemize}
+  \item\link{https://qvq.moe:5001/public/imgs/2018-GoogleCodeIn\%E9\%AB\%98\%E4\%B8\%AD.jpg}{\texttt{Google Code-in 2017}}
+	\item\link{https://qvq.moe:5001/public/imgs/2020-\%E5\%A4\%96\%E7\%A0\%94\%E7\%A4\%BE\%E5\%9B\%BD\%E6\%9D\%90\%E6\%9D\%AF\%E5\%85\%A8\%E5\%9B\%BD\%E8\%8B\%B1\%E8\%AF\%AD\%E9\%98\%85\%E8\%AF\%BB\%E5\%A4\%A7\%E8\%B5\%9B\%E5\%B1\%B1\%E4\%B8\%9C\%E7\%9C\%81\%E5\%A4\%8D\%E8\%B5\%9B-\%E4\%B8\%89\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{2020\enquote{FLTRP·ETIC Cup}English Reading Contest\ Shandong Provincial Final \ Third Award}}
+	\item\link{https://qvq.moe:5001/public/imgs/2021-\%E4\%B8\%AD\%E5\%9B\%BD\%E5\%A4\%A7\%E5\%AD\%A6\%E7\%94\%9F\%E8\%AE\%A1\%E7\%AE\%97\%E6\%9C\%BA\%E8\%AE\%BE\%E8\%AE\%A1\%E5\%A4\%A7\%E8\%B5\%9B\%E5\%B1\%B1\%E4\%B8\%9C\%E7\%9C\%81\%E7\%BA\%A7\%E8\%B5\%9B-\%E4\%B8\%89\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{2021 14th Chinese Collegiate Computing Competition\ Shandong Provincial\ Third Award}}
+	\item\link{https://qvq.moe:5001/public/imgs/2021-\%E5\%85\%A8\%E5\%9B\%BD\%E5\%A4\%A7\%E5\%AD\%A6\%E7\%94\%9F\%E8\%8B\%B1\%E8\%AF\%AD\%E7\%AB\%9E\%E8\%B5\%9BC\%E7\%B1\%BB-\%E4\%BA\%8C\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{2021 3rd National College Computer Ability Challenge\ Program design-C++Easten China area\ Excellence Award}}
+	\item\link{https://qvq.moe:5001/public/imgs/2021-\%E5\%B1\%B1\%E4\%B8\%9C\%E7\%9C\%81\%E5\%A4\%A7\%E5\%AD\%A6\%E7\%94\%9F\%E7\%94\%B5\%E5\%AD\%90\%E4\%B8\%8E\%E4\%BF\%A1\%E6\%81\%AF\%E6\%8A\%80\%E6\%9C\%AF\%E5\%BA\%94\%E7\%94\%A8\%E5\%A4\%A7\%E8\%B5\%9B-\%E4\%BA\%8C\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{\enquote{Sai Guan Cup}8th Shandong Provincial College Students' Electronic and Information Technology Application Competition\ Second Award}}
+	\item\link{https://qvq.moe:5001/public/imgs/2022-\%E4\%B8\%AD\%E5\%9B\%BD\%E5\%A4\%A7\%E5\%AD\%A6\%E7\%94\%9F\%E8\%AE\%A1\%E7\%AE\%97\%E6\%9C\%BA\%E8\%AE\%BE\%E8\%AE\%A1\%E5\%A4\%A7\%E8\%B5\%9B\%E7\%9C\%81\%E4\%BA\%8C\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{2022 15th Chinese Collegiate Computing Competition\ Shandong Provincial\ Second Award}}
+	\item\link{https://qvq.moe:5001/public/imgs/2022-\%E6\%93\%8D\%E4\%BD\%9C\%E7\%B3\%BB\%E7\%BB\%9F\%E8\%AE\%BE\%E8\%AE\%A1\%E5\%88\%9D\%E8\%B5\%9B\%E4\%BC\%98\%E8\%83\%9C\%E5\%A5\%96.jpg} {\texttt{2022 Computer System Development Capability Competition - Kernel Design Competition\ 
+Preliminary Excellence Award}}
+	\item\link{https://qvq.moe:5001/public/imgs/2022-\%E8\%93\%9D\%E6\%A1\%A5\%E6\%9D\%AF\%E5\%9B\%BD\%E8\%B5\%9BB\%E7\%BB\%84-\%E4\%B8\%89\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{13rd Blue Bridge Cup\ Shandong Provincal C/C++\ College B Group\ First Award}}
+	\item\link{https://qvq.moe:5001/public/imgs/2022-\%E8\%93\%9D\%E6\%A1\%A5\%E6\%9D\%AF\%E5\%9B\%BD\%E8\%B5\%9BB\%E7\%BB\%84-\%E4\%B8\%89\%E7\%AD\%89\%E5\%A5\%96.jpg} {\texttt{13rd Blue Bridge Cup\ National Finals C/C++\ College B Group\ Third Award}}
+	\item\link{https://qvq.moe:5001/public/imgs/\%E8\%BD\%AF\%E4\%BB\%B6\%E8\%91\%97\%E4\%BD\%9C\%E6\%9D\%83\%E7\%99\%BB\%E8\%AE\%B0\%E8\%AF\%81\%E4\%B9\%A6-\%E7\%A9\%BA\%E6\%B0\%94\%E8\%B4\%A8\%E9\%87\%8F\%E6\%A3\%80\%E6\%B5\%8B\%E7\%B3\%BB\%E7\%BB\%9F.jpg} {\texttt{National Copyright Administration of China\  Computer software copyright registration certificate\ AiR Air Quality Monitoring System}}
+\end{itemize}
+
+
+\end{document}
+

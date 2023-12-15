@@ -30,6 +30,7 @@
 \RequirePackage[%
   a4paper,%
   margin=1.5cm,%
+  bottom=0.5cm,
   includefoot,
 ]{geometry}
 \RequirePackage{xparse}
@@ -429,24 +430,41 @@
 % \project
 %   {<start-date>}   % #1
 %   [<end-date>]     % #2
-%   {<department>}   % #3
-%   {<type>}         % #4
-%   {<name>}         % #5
-%   {<description>}  % #6
-%   [<tags>]         % #7
-\NewDocumentCommand{\project}{m o m m m m o}{
+%   [<link>]     	    % #3
+%   {<name>}         % #4
+%   {<description>}  % #5
+%   [<tags>]         % #6
+\NewDocumentCommand{\project}{m o o m m o}{
   \multirowcell{2}[0ex][r]{%
     \IfValueTF{#2}{#2}{\ifdef{\@zh}{现在}{present}} \\ #1%
   }
-  & \textbf{#5} \\*
-  \ifdef{\@zh}{%
-    & #3 \textbullet #4 \\*
-  }{%
-    & #4, #3 \\*
+  & \IfValueTF{#3}{
+    \link{#3}{\textbf{#4}}
+  }{
+    \textbf{#4}
+  } \\*
+
+  & \begin{minipage}[t]{\rightcolwidth} #5 \end{minipage} \\*
+  \IfValueT{#6}{%
+    & \footnotesize{\tags{#6}} \\
   }
-  & \begin{minipage}[t]{\rightcolwidth} #6 \end{minipage} \\*
-  \IfValueT{#7}{%
-    & \footnotesize{\tags{#7}} \\
+}
+
+
+% \simpleProject
+%   [<link>]    #1
+%   {<name>}    #2
+%   {<detail>}  #3
+%   [<tag>]     #4
+\NewDocumentCommand{\simpleProject}{o m m o}{
+  \normalsize\IfValueTF{#1}{
+    \link{#1}{\textbf{#2}}:
+  }{
+    \textbf{#2}:
+  } \\*
+  #3 \\*
+  \IfValueT{#4}{%
+    \footnotesize{\tags{#4}} \\
   }
 }
 
@@ -526,10 +544,10 @@
   \hspace{1em}
   \begin{minipage}[t]{\dimexpr(\linewidth/3) - 3em}
     \begin{tabular}{>{}l >{}l}
-      \multicolumn{2}{l}{\textbf{#1}}\\
-      \multicolumn{2}{l}{\emph{#2}, \textsc{#3}}\\
-      \quad \mailSymbol & \href{mailto:#4}{#4} \\
-      \quad \phoneSymbol & #5 \\
+      \multicolumn{2}{l}{\textbf{#1}}            \\
+      \multicolumn{2}{l}{\emph{#2}, \textsc{#3}} \\
+      \quad \mailSymbol  & \href{mailto:#4}{#4}  \\
+      \quad \phoneSymbol & #5                    \\
     \end{tabular}
   \end{minipage}%
 }
