@@ -142,6 +142,13 @@
 }
 \AtEndDocument{\thispagestyle{lastpage}}
 
+% First-page style
+\def\ps@firstpage{%
+  \def\@oddhead{\textcolor{gray}{\footnotesize\@headercontent}\hfil}%
+  \def\@evenhead{\textcolor{gray}{\footnotesize\@headercontent}\hfil}%
+}
+\AtBeginDocument{\thispagestyle{firstpage}}
+
 % No paragraph indentation
 \setlength{\parindent}{0em}
 
@@ -257,6 +264,7 @@
 \newcommand*{\keywords}[1]{\def\@keywords{#1}}
 % File information
 \newcommand*{\fileinfo}[1]{\def\@fileinfo{#1}}
+\newcommand*{\headercontent}[1]{\def\@headercontent{#1}}
 
 % Photo: \photo{<diameter>}{<photo>}
 \newcommand{\photo}[2]{\def\@photo{#2}\def\@photodiameter{#1}}

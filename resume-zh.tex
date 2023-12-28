@@ -15,11 +15,10 @@
 
 % File information shown at the footer of the last page
 \fileinfo{%
-  \faCopyright{} 2018--2020, Weitian LI \hspace{0.5em}
-  \creativecommons{by}{4.0} \hspace{0.5em}
-  \githublink{liweitianux}{resume} \hspace{0.5em}
+  \githublink{Oyami-Srk}{Resume} \hspace{0.5em}
   \faEdit{} \today
 }
+\headercontent{本简历由Github Action自动构建，请访问\link{https://blog.qvq.moe/Resume/resume-zh.pdf}{本链接}查看最新版本}
 
 \name{昊轩}{韩}
 
@@ -51,9 +50,9 @@
 %======================================================================
 {\onehalfspacing
 \hspace{2em}
-本人对计算机底层、操作系统等有深入的研究。热衷于操作系统技术，编写过 x86 、RISC-V 架构的操作系统内核。熟悉Linux内核及系统，并对嵌入式软件开发有一定经验。 
-有充分的计算机底层、裸机开发的经验，能够独立完成操作系统内核级别的设计、开发与调试等。对主流的集成开发环境有丰富的使用经验。
-热爱开源社区，在\link{https://github.com/Oyami-Srk}{GitHub} 上开源了多个个人项目，并对一些开源项目做出过贡献。
+对计算机底层、操作系统等有深入的研究。热衷于操作系统技术，编写过 x86、RISC-V 架构的操作系统内核。熟悉Linux内核和GNU/Linux系统，并对嵌入式软件开发有一定经验。 
+有充分的计算机底层、裸机开发的经验，能够独立完成操作系统内核级别的设计、开发与调试等。对各类开发环境和工具链有丰富的使用经验，擅长快速学习新技术。实际应用能力突出，能够完成全栈工程师的工作。
+热爱开源社区，在\link{https://github.com/Oyami-Srk}{GitHub} 上开源了多个个人项目，并对一些开源项目做出过贡献。在校期间曾担任计算机协会会长，荣获优秀学生称号，并多次获得校奖学金。
 \par}
 
 
@@ -66,7 +65,7 @@
 	\textbf{Git}、\textbf{Vue}、\textbf{Django}、\textbf{FreeRTOS}
   }
   \comptence{\icon{\faLanguage} 语言}{
-    \textbf{英语(CET4 604分)} --- 习惯使用英文进行技术资料的查找、编写文档等。
+    \textbf{英语(CET4 604分)} --- 习惯使用英文进行技术资料的阅读、编写等。
   }
 \end{competences}
 
@@ -103,13 +102,14 @@
 \begin{experiences}
   \experience%
     [2023.09]%
-    {至今}%
+    {2023.12}%
     {技术支持工程师 @ \textbf{统信软件技术有限公司（深圳分公司）}}%
     [\begin{itemize}
 		\item 负责Linux开源软件的打包及维护工作
 		\item 使用爬虫技术自动化工作流程，并参与部门的技术支持工作。
-		\item 独立研发\link{https://github.com/shirodeb}{ShiroDEB}工具集，并基于此编写和维护自动构建脚本
-		\item 参加公司对外主办的技术分享活动，分享技术心得、介绍工作成果。
+		\item 独立研发\link{https://github.com/shirodeb}{ShiroDEB}工具集，并基于此编写和维护自动构建脚本。
+		\item 参加公司对外主办的技术分享活动，分享技术心得、介绍工作成果（2023-11 武汉LUG）。
+		\item 使用Docker技术及Github Action持续集成ShiroDEB工作环境，创建构建净室环境。
     \end{itemize}]
 \end{experiences}
 
@@ -117,13 +117,13 @@
 \sectionTitle{个人项目}{\faCode}
 %======================================================================
 \begin {projects}
-	\project{2023.8}[至今]{安规培训报名信息平台及周边设施}{
+	\project{2023.8}[2023.12]{安规培训报名信息平台及周边设施}{
 		个人外包项目，于实习期业余时间编写维护。本项目实现了一个安规培训报名信息、考试信息管理平台，并支持Excel数据表的导入导出功能。目前正在维护期。
 		\begin{itemize}
 			\item 使用Django及Django REST Framework作为后端实现
 			\item 使用Vue3.0、Electron进行管理系统的开发，使用Svelte进行学员报名页的开发
 			\item 基于ID100身份证读取器和Java FX实现了一个与现行系统交互的考试人脸比对签到软件。
-			\item 使用Docker和Docker-Compose完成容器化，提高部署效率。
+			\item 使用Docker和Docker-Compose实现容器化，提高部署效率。
 		\end{itemize}
 	}[全栈开发,Docker,运维]
 
