@@ -23,7 +23,9 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: resume-zh.tex
+          root_file: |
+            resume-zh.tex
+            resume-en.tex
           latexmk_use_xelatex: true
           extra_fonts: |
             ./fonts/*.otf
@@ -33,13 +35,20 @@ jobs:
         with:
           name: resume-zh.pdf
           path: resume/resume-zh.pdf
+      - name: Upload PDF file to release
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-en.pdf
+          path: resume/resume-en.pdf
       - name: Push PDF file to gh-pages
         run: |
           cp resume/resume-zh.pdf gh-pages/resume-zh.pdf
+          cp resume/resume-en.pdf gh-pages/resume-en.pdf
           cd gh-pages
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -f resume-zh.pdf
-          git commit -m "resume-zh.pdf update"
+          git add -f resume-en.pdf
+          git commit -m "resume pdf update"
           git push
           
