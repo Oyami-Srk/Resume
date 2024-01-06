@@ -30,6 +30,13 @@ jobs:
           extra_fonts: |
             ./fonts/*.otf
           working_directory: resume
+      - name: Merge PDFs
+        uses: Oyami-Srk/MergePDFs-action@v1
+        with:
+          files: |
+            resume/resume-zh.pdf
+            resume/resume-en.pdf
+          output: resume/resume.pdf
       - name: Upload PDF file to release
         uses: actions/upload-artifact@v4
         with:
@@ -40,15 +47,22 @@ jobs:
         with:
           name: resume-en.pdf
           path: resume/resume-en.pdf
+      - name: Upload PDF file to release
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume.pdf
+          path: resume/resume.pdf
       - name: Push PDF file to gh-pages
         run: |
           cp resume/resume-zh.pdf gh-pages/resume-zh.pdf
           cp resume/resume-en.pdf gh-pages/resume-en.pdf
+          cp resume/resume.pdf gh-pages/resume.pdf
           cd gh-pages
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -f resume-zh.pdf
           git add -f resume-en.pdf
+          git add -f resume.pdf
           git commit -m "resume pdf update"
           git push
           
