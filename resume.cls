@@ -560,5 +560,17 @@
   \end{minipage}%
 }
 
+%%
+%% Section: paragraph
+%%
+
+\renewenvironment{paragraph}{%
+  \setlength\parskip{0.1em}
+  \onehalfspacing
+  \hspace{2em}
+}{%
+  \par
+}
+
 \endinput
 %% EOF
